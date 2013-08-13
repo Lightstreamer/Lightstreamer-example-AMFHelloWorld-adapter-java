@@ -143,7 +143,9 @@ Finally, create an adapters.xml file under the LS_HOME/adapters/AMFHelloWorld fo
 </adapters_conf>
 ```
 
-As anticipated, while [assembling the client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex) we're going to use "AMFHELLOWORLD" as the adapter set name, while we'll use the classic LiteralBasedProvider as our Metadata Adapter and our brand new AMFHelloWorld class as our Data Adapter.
+As anticipated, while [assembling the client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex) we're going to use "AMFHELLOWORLD" as the adapter set name, while we'll use the classic LiteralBasedProvider as our Metadata Adapter and our brand new AMFHelloWorld class as our Data Adapter.<br>
+
+Please note that the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java/releases) of this project contains an alternative deploy folder with a jar file instead of .class ones.
 
 ## Ready to go ##
 
