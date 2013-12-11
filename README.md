@@ -1,19 +1,19 @@
-# AMF "Hello World" Adapters for Java #
+# Lightstreamer - "Hello World" Tutorial - Java SE (AMF) Adapter #
 
 This project, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
 
 First, a quick recap of the previous installments:
 
-- "Hello World" with Lightstreamer: An introduction to Lightstreamer's data model, [JavaScript Client API](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), and [Java Data Adapters API](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java).
-- ["Hello World" for .NET with Lightstreamer](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet): The .NET API version of the Data Adapter used in the "Hello World" application, showing both a C# and a Visual Basic port.
-- ["Hello World" for Sockets with Lightstreamer](http://cometdaily.com/2008/07/29/hello-world-for-sockets-with-lightstreamer/): The TCP-socket-based version of the Data Adapter, suitable for implementation in other languages (PHP, Python, Perl, etc).
+- "Hello World" with Lightstreamer: An introduction to Lightstreamer's data model, [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), and [Lightstreamer - "Hello World" Tutorial - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java).
+- [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet): The .NET API version of the Data Adapter used in the "Hello World" application, showing both a C# and a Visual Basic port.
+- [Lightstreamer - "Hello World" Tutorial - TCP Sockets Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-socket): The TCP-socket-based version of the Data Adapter, suitable for implementation in other languages (PHP, Python, Perl, etc).
 
 Basically, Lightstreamer Server can be seen as a "technology hub" for data push, where you can mix different technologies on the client-side and on the server-side to exchange real-time messages.<br>
 ![Schema](technology-hub1.png)
 
 We will delve into the "Flex on the client-side, Java on the server-side" scenario and, in this project, full details for the server-side will be provided.<br>
 
-As you may recall form the [first installment](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), Lightstreamer data push model is based on items made up of fields. A client can subscribe to many items, each with its own schema (a set of fields). Each field is usually a text string with an arbitrary length (from a few characters to large data structures, perhaps based on XML, JSON, etc.). With this new Lightstreamer feature, you can now put a full AMF object into any field and have it pushed from the server to the client in real binary format (with no re-encondings).<br>
+As you may recall form the first installment [Lightstreamer- "Hello World" Tutorial - HTTP Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), Lightstreamer data push model is based on items made up of fields. A client can subscribe to many items, each with its own schema (a set of fields). Each field is usually a text string with an arbitrary length (from a few characters to large data structures, perhaps based on XML, JSON, etc.). With this new Lightstreamer feature, you can now put a full AMF object into any field and have it pushed from the server to the client in real binary format (with no re-encondings).<br>
 
 The Flex Client library for Lightstreamer has been used for one of the <b>major dealing platforms</b> in the finance field and has undergone many cycles of improvements to make it completely production resilient. We were asked to add native support for AMF objects to improve the performance when streaming complex data structures. So now you can push both text-based items and object-based items to the same Flex application.<br>
 
@@ -143,13 +143,13 @@ Finally, create an adapters.xml file under the LS_HOME/adapters/AMFHelloWorld fo
 </adapters_conf>
 ```
 
-As anticipated, while [assembling the client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex) we're going to use "AMFHELLOWORLD" as the adapter set name, while we'll use the classic LiteralBasedProvider as our Metadata Adapter and our brand new AMFHelloWorld class as our Data Adapter.<br>
+As anticipated, while assembling the client [Lightstreamer - "Hello World Tutorial - Flex (AMF) Client"](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex) we're going to use "AMFHELLOWORLD" as the adapter set name, while we'll use the classic LiteralBasedProvider as our Metadata Adapter and our brand new AMFHelloWorld class as our Data Adapter.<br>
 
 Please note that the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java/releases) of this project contains an alternative deploy folder with a jar file instead of .class ones.
 
 ## Ready to go ##
 
-Please, in order to test this adapter follow the steps in [this tutorial](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
+Please, in order to test this adapter follow the steps in [Lightstreamer - "Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
 
 ## Final Notes ##
 
@@ -161,13 +161,13 @@ Please also consider that the Flex client library in this tutorial is not availa
 
 ## Clients using this Adapter ##
 
-* ["Hello World" for Flex AMF with Lightstreamer](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex)
+* [Lightstreamer - "Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex)
 
 ## Related projects ##
 
-* ["Hello World" with Lightstreamer Colosseo](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript)
-* [Lightstreamer "Hello World" Adapter for Java](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java)
-* [Lightstreamer "Hello World" Adapter for .NET](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet)
+* [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript)
+* [Lightstreamer - "Hello World" Tutorial - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java)
+* [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet)
 
 # Lightstreamer Compatibility Notes #
 
