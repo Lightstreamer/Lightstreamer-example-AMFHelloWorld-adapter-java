@@ -1,5 +1,5 @@
 # Lightstreamer - "Hello World" Tutorial - Java SE (AMF) Adapter #
-<!-- START DESCRIPTION "Hello World" Tutorial -->
+<!-- START DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
 
 This project, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
 
@@ -30,7 +30,7 @@ For this tutorial, I'm assuming you have already read the Basic Hello World exam
 
 On the client, the result of this tutorial will be quite similar to the one obtained with the original [Hello World for JavaScript](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), but in Flex: we'll get a string alternating some different values (Hello AMF World) and a timestamp. On the server-side, data will be encapsulated into a <b>JavaBean</b> containing a String and a Date instance. This bean will be translated into a byte array and then injected into the Lightstreamer kernel as a single field, instead of being spread over different fields as simple strings (as the original adapter does). Here lies the power of AMF, as you will be able to push even complex JavaBeans to your Flex clients with ease.
 
-<!-- END DESCRIPTION "Hello World" Tutorial -->
+<!-- END DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
 
 ## Gather Stuff ##
 
