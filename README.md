@@ -3,6 +3,9 @@
 
 This project, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
 
+## Details
+As example of a client using this adapter, you may refer to the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
+
 First, a quick recap of the previous installments:
 
 - "Hello World" with Lightstreamer: An introduction to Lightstreamer's data model, [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), and [Lightstreamer - "Hello World" Tutorial - Java Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java).
@@ -31,15 +34,18 @@ For this tutorial, I'm assuming you have already read the Basic Hello World exam
 On the client, the result of this tutorial will be quite similar to the one obtained with the original [Hello World for JavaScript](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), but in Flex: we'll get a string alternating some different values (Hello AMF World) and a timestamp. On the server-side, data will be encapsulated into a <b>JavaBean</b> containing a String and a Date instance. This bean will be translated into a byte array and then injected into the Lightstreamer kernel as a single field, instead of being spread over different fields as simple strings (as the original adapter does). Here lies the power of AMF, as you will be able to push even complex JavaBeans to your Flex clients with ease.
 
 <!-- END DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
+## Install
 
-## Gather Stuff ##
+## Build
+
+### Gather Stuff
 
 - First of all you'll need a browser, a Flash player, and a JDK: hopefully you already have those :).
 - You'll need <b>Lightstreamer Server (Presto or Vivace)</b> and <b>Lightstreamer Flex Client 2.0</b>. You can [download them from the Lightstreamer web site](http://www.lightstreamer.com/download.htm).
 - You'll have to compile a Flex application, so you'll need either the [Flex Builder](http://www.adobe.com/mena/products/flex/) or the [Flex SDK](http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK) (the example works with Flex 3 and Flex 4; use Flex 4 only if you're going to use it with the Flex Builder, otherwise you may have problems with the mxmlc.
 - The conversion from Java beans to an AMF-compatible byte array is performed by a couple of the [BlazeDS libraries](http://opensource.adobe.com/wiki/display/blazeds/Release+Builds). Download BlazeDS (binary distribution) and extract flex-messaging-common.jar and flex-messaging-core.jar from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under "WEB-INF/lib/").
 
-## Server-Side ##
+### Server-Side
 
 Now it's time to write the adapter. We'll reuse most of the code of the first Hello World. We'll add a static property and a static utility method to the class we've renamed into "AMFHelloWorld".
 
@@ -150,33 +156,33 @@ As anticipated, while assembling the client [Lightstreamer - "Hello World Tutori
 
 Please note that the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java/releases) of this project contains an alternative deploy folder with a jar file instead of .class ones.
 
-## Ready to Go ##
+### Ready to Go 
 
 Please, in order to test this adapter follow the steps in [Lightstreamer - "Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
 
-## Final Notes ##
+### Final Notes
 
 You've seen how to push Objects instead of Strings from a Lightstreamer server to a Flex client. You can exploit this technique to push complex data structures, but obviously, doing so you'll lose some of the optimizations offered by Lightstreamer protocol. For example, the merging algorithm (of the MERGE mode) is applied to the entire bean instead of being applied to each single field, so that every time a property within the bean changes, the entire bean is pushed to the client, not only the changed value. As with anything regarding engineering you'll have to choose the trade-off that optimizes properly for your application.
 
 Please also consider that the Flex client library in this tutorial is not available with the Moderato version of Lightstreamer Server, so you may want to use a [DEMO license](http://www.lightstreamer.com/download) for Lightstreamer Presto/Vivace to experiment with it.
 
-# See Also #
+## See Also
 
-## Clients Using This Adapter ##
+### Clients Using This Adapter
 <!-- START RELATED_ENTRIES -->
 
 * [Lightstreamer - "Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex)
 
 <!-- END RELATED_ENTRIES -->
 
-## Related Projects ##
+### Related Projects
 
 * [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript)
 * [Lightstreamer - "Hello World" Tutorial - Java Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java)
 * [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet)
 * [Lightstreamer - Reusable Metadata Adapters - Java Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java)
 
-# Lightstreamer Compatibility Notes #
+## Lightstreamer Compatibility Notes 
 
 - Compatible with Lightstreamer Flex Client Library version 2.0 or newer.
 - For Lightstreamer Allegro (+ Flex Client API support), Presto, Vivace.
