@@ -35,19 +35,20 @@ On the client, the result of this tutorial will be quite similar to the one obta
 
 <!-- END DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
 ## Install
+* Download and install Lightstreamer Server (The Lightstreamer Server comes with a free non-expiring demo license for 20 connected users).
+* Get `deploy.zip` file of the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java/releases) and unzip it.
+* Copy the just unzipped `AMFHelloWorld` folder into the `adapters` folder of your Lightstreamer Server installation.
+* Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`) and copy them into the `AMFHelloWOrld/lib` folder.
+* Launch Lightstreamer Server.
+* Launch a client like the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
 
 ## Build
 
-### Gather Stuff
-
-- First of all you'll need a browser, a Flash player, and a JDK: hopefully you already have those :).
-- You'll need <b>Lightstreamer Server (Presto or Vivace)</b> and <b>Lightstreamer Flex Client 2.0</b>. You can [download them from the Lightstreamer web site](http://www.lightstreamer.com/download.htm).
-- You'll have to compile a Flex application, so you'll need either the [Flex Builder](http://www.adobe.com/mena/products/flex/) or the [Flex SDK](http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK) (the example works with Flex 3 and Flex 4; use Flex 4 only if you're going to use it with the Flex Builder, otherwise you may have problems with the mxmlc.
-- The conversion from Java beans to an AMF-compatible byte array is performed by a couple of the [BlazeDS libraries](http://opensource.adobe.com/wiki/display/blazeds/Release+Builds). Download BlazeDS (binary distribution) and extract flex-messaging-common.jar and flex-messaging-core.jar from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under "WEB-INF/lib/").
-
-### Server-Side
-
-Now it's time to write the adapter. We'll reuse most of the code of the first Hello World. We'll add a static property and a static utility method to the class we've renamed into "AMFHelloWorld".
+* First of all you'll need a browser, a Flash player, and a JDK: hopefully you already have those :).
+* You'll need <b>Lightstreamer Server (Presto or Vivace)</b> and <b>Lightstreamer Flex Client 2.0</b>. You can [download them from the Lightstreamer web site](http://www.lightstreamer.com/download.htm).
+* You'll have to compile a Flex application, so you'll need either the [Flex Builder](http://www.adobe.com/mena/products/flex/) or the [Flex SDK](http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK) (the example works with Flex 3 and Flex 4; use Flex 4 only if you're going to use it with the Flex Builder, otherwise you may have problems with the mxmlc.
+* The conversion from Java beans to an AMF-compatible byte array is performed by a couple of the [BlazeDS libraries](http://sourceforge.net/adobe/blazeds/wiki/Home/). Download BlazeDS (binary distribution) and extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under "WEB-INF/lib/").
+- Write the adapter. We'll reuse most of the code of the first Hello World. We'll add a static property and a static utility method to the class we've renamed into "AMFHelloWorld".
 
 ```java
 private static SerializationContext context = 
