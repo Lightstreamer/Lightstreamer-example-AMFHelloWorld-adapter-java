@@ -35,6 +35,8 @@ On the client, the result of this tutorial will be quite similar to the one obta
 
 <!-- END DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
 
+### A Look at the Code
+
 This adapter reuses most of the code of the first Hello World. We add a static property and a static utility method to the class we've renamed into "AMFHelloWorld".
 
 ```java
