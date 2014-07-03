@@ -1,10 +1,13 @@
 # Lightstreamer - "Hello World" Tutorial - Java SE (AMF) Adapter #
 <!-- START DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
 
-This project, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
+This demo, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
+
+This project shows the Data Adapter and Metadata Adapters for the *Hello World" Tutorial* to show how to use AMF with the Lightstreamer Flex Client Library ([docs](http://www.lightstreamer.com/docs/client_flashflexas_asdoc/index.html)).
+
+As example of a client using this adapter, you may refer to the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
 
 ## Details
-As example of a client using this adapter, you may refer to the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
 
 First, a quick recap of the previous installments:
 
