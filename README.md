@@ -38,7 +38,7 @@ On the client, the result of this tutorial will be quite similar to the one obta
 
 <!-- END DESCRIPTION lightstreamer-example-amfhelloworld-adapter-java -->
 
-### A Look at the Code
+### Dig the Code
 
 This adapter reuses most of the code of the first Hello World. We add a static property and a static utility method to the class we've renamed into "AMFHelloWorld".
 
@@ -146,6 +146,7 @@ The `adapters.xml` file under the `LS_HOME/adapters/AMFHelloWorld` folder looks 
 You've seen how to push Objects instead of Strings from a Lightstreamer server to a Flex client. You can exploit this technique to push complex data structures, but obviously, doing so you'll lose some of the optimizations offered by Lightstreamer protocol. For example, the merging algorithm (of the MERGE mode) is applied to the entire bean instead of being applied to each single field, so that every time a property within the bean changes, the entire bean is pushed to the client, not only the changed value. As with anything regarding engineering you'll have to choose the trade-off that optimizes properly for your application.
 
 ## Install
+If you want to install a version of this demo pointing to your local Lightstreamer Server, follow these steps.
 * Download *Lightstreamer Server Presto* or *Vivace* (make sure you use Presto or Vivace edition, otherwise the Flex client library used in this tutorial may not be available; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Get the `deploy.zip` file of the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java/releases), unzip it and copy the just unzipped `AMFHelloWorld` folder into the `adapters` folder of your Lightstreamer Server installation.
 * Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`) and copy them into the `adapters/AMFHelloWOrld/lib` folder.
@@ -153,7 +154,7 @@ You've seen how to push Objects instead of Strings from a Lightstreamer server t
 * Launch a client like the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex).
 
 ## Build
-To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using the one provided in the `deploy.zip` file, follow these steps:
+To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java#install) section above, follow these steps:
 
 * Download this project.
 * Get the `ls-adapter-interface.jar`, `ls-generic-adapters.jar`, and `log4j-1.2.15.jar` files from the [Lightstreamer distribution](http://www.lightstreamer.com/download) and copy them into the `lib` folder.
