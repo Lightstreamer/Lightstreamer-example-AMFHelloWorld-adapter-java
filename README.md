@@ -124,7 +124,7 @@ As you can see, there's nothing extremely complicated here, we just convert the 
 
 Please find the complete Java Adapter source in the "AMFHelloWorld.java" source file of this project.
 
-In the `adapters.xml` configuration file, we use "AMFHELLOWORLD" as the adapter set name, as expected by the [Lightstreamer - "Hello World Tutorial - Flex (AMF) Client"](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex), while we use the classic [LiteralBasedProvider](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java) as our Metadata Adapter and our AMFHelloWorld class as our Data Adapter.<br>
+In the `adapters.xml` configuration file, we use "AMFHELLOWORLD" as the adapter set name, as expected by the [Lightstreamer - "Hello World Tutorial - Flex (AMF) Client"](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex), while we use the classic [LiteralBasedProvider](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java), already provided by Lightstreamer server, as our Metadata Adapter and our AMFHelloWorld class as our Data Adapter.<br>
 The `adapters.xml` file under the `LS_HOME/adapters/AMFHelloWorld` folder looks like:
 ```xml
 <?xml version="1.0"?>
@@ -157,11 +157,11 @@ If you want to install a version of this demo in your local Lightstreamer Server
 To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java#install) section above, follow these steps:
 
 * Download this project.
-* Get the `ls-adapter-interface.jar`, `ls-generic-adapters.jar`, and `log4j-1.2.15.jar` files from the [Lightstreamer distribution](http://www.lightstreamer.com/download) and copy them into the `lib` folder.
+* Get the `ls-adapter-interface.jar` and `log4j-1.2.15.jar` files from the [Lightstreamer distribution](http://www.lightstreamer.com/download) and copy them into the `lib` folder.
 * Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`), and copy them into the `lib` folder.
 * Build the java source files in the `src` folder into a `LS_AMF_Hello_World_Adapter.jar` file. Here is an example for that:
 ```sh
-  >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/ls-generic-adapters.jar;lib/log4j-1.2.15.jar -sourcepath -d tmp_classes src/AMFHelloWorld.java
+  >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.15.jar -sourcepath -d tmp_classes src/AMFHelloWorld.java
   >jar cvf LS_AMF_Hello_World_Adapter.jar -C tmp_classes com
 ```
 * copy the just compiled `LS_AMF_Hello_World_Adapter.jar` in the `adapters/AMFHelloWorld/lib` folder of your Lightstreamer Server installation.
@@ -185,6 +185,7 @@ To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using 
 ## Lightstreamer Compatibility Notes 
 
 - Compatible with Lightstreamer Flex Client Library version 2.0 or newer.
-- Compatible with Lightstreamer SDK for Java Adapters version 5.1.x
+- Compatible with Lightstreamer SDK for Java In-Process Adapters since 6.0
+- For a version of this example compatible with Lightstreamer SDK for Java Adapters version 5.1, please refer to [this tag](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java/tree/for_Lightstreamer_5.1).
 <br>
 - For Lightstreamer Allegro (+ Flex Client API support), Presto, Vivace.
