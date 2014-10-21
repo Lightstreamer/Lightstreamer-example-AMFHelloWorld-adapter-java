@@ -185,4 +185,6 @@ To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using 
 ## Lightstreamer Compatibility Notes 
 
 - Compatible with Lightstreamer Flex Client Library version 2.0 or newer.
+- Compatible with Lightstreamer SDK for Java Adapters version 5.1.x
+<br>
 - For Lightstreamer Allegro (+ Flex Client API support), Presto, Vivace.
