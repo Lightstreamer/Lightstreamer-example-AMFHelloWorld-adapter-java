@@ -157,11 +157,12 @@ If you want to install a version of this demo in your local Lightstreamer Server
 To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java#install) section above, follow these steps:
 
 * Download this project.
-* Get the `ls-adapter-interface.jar` and `log4j-1.2.15.jar` files from the [Lightstreamer distribution](http://www.lightstreamer.com/download) and copy them into the `lib` folder.
+* Get the `ls-adapter-interface.jar` file from the [Lightstreamer distribution](http://www.lightstreamer.com/download) and copy it into the `lib` folder.
+* Get the `log4j-1.2.17.jar` file from [Apache log4j](https://logging.apache.org/log4j/1.2/) and copy it into the `lib` folder.
 * Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`), and copy them into the `lib` folder.
 * Build the java source files in the `src` folder into a `LS_AMF_Hello_World_Adapter.jar` file. Here is an example for that:
 ```sh
-  >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.15.jar -sourcepath -d tmp_classes src/AMFHelloWorld.java
+  >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.17.jar -sourcepath -d tmp_classes src/AMFHelloWorld.java
   >jar cvf LS_AMF_Hello_World_Adapter.jar -C tmp_classes com
 ```
 * copy the just compiled `LS_AMF_Hello_World_Adapter.jar` in the `adapters/AMFHelloWorld/lib` folder of your Lightstreamer Server installation.
