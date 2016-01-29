@@ -169,7 +169,7 @@ To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using 
 * Build the java source files in the `src` folder into a `LS_AMF_Hello_World_Adapter.jar` file. Here is an example for that:
 ```sh
   >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.17.jar -sourcepath -d tmp_classes src/AMFHelloWorld.java
-  >jar cvf LS_AMF_Hello_World_Adapter.jar -C tmp_classes com
+  >jar cvf LS_AMF_Hello_World_Adapter.jar -C tmp_classes .
 ```
 * copy the just compiled `LS_AMF_Hello_World_Adapter.jar` in the `adapters/AMFHelloWorld/lib` folder of your Lightstreamer Server installation.
 
