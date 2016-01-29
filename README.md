@@ -168,7 +168,11 @@ To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using 
 * Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`), and copy them into the `lib` folder.
 * Build the java source files in the `src` folder into a `LS_AMF_Hello_World_Adapter.jar` file. Here is an example for that:
 ```sh
+<<<<<<< HEAD
   >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.17.jar -sourcepath src/ -d tmp_classes src/AMFHelloWorld.java
+=======
+  >javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.17.jar -sourcepath -d tmp_classes src/AMFHelloWorld.java
+>>>>>>> 8d98e851f41204b3b50c90c11d1429befe0f7574
   >jar cvf LS_AMF_Hello_World_Adapter.jar -C tmp_classes .
 ```
 * copy the just compiled `LS_AMF_Hello_World_Adapter.jar` in the `adapters/AMFHelloWorld/lib` folder of your Lightstreamer Server installation.
