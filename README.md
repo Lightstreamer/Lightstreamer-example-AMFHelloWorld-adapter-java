@@ -195,4 +195,4 @@ To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using 
 - Compatible with Lightstreamer SDK for Java In-Process Adapters since 6.0
 - For a version of this example compatible with Lightstreamer SDK for Java Adapters version 5.1, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java/tree/for_Lightstreamer_5.1).
 <br>
-- For Lightstreamer Allegro (+ Flex Client API support), Presto, Vivace.
+- Ensure that Flex Client API is supported by Lightstreamer Server license configuration.
