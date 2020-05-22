@@ -153,7 +153,7 @@ You've seen how to push Objects instead of Strings from a Lightstreamer server t
 
 ## Install
 If you want to install a version of this demo in your local Lightstreamer Server, follow these steps:
-* Download *Lightstreamer Server Presto* or *Vivace* (make sure you use Presto or Vivace edition, otherwise, the Flex client library used in this tutorial may not be available; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
+* Download *Lightstreamer Server* (Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java/releases), unzip it, and copy the just unzipped `AMFHelloWorld` folder into the `adapters` folder of your Lightstreamer Server installation.
 * Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`), and copy them into the `adapters/AMFHelloWOrld/lib` folder.
 * Launch Lightstreamer Server.
