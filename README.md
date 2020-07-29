@@ -3,7 +3,7 @@
 
 This demo, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
 
-This project shows the Data Adapter and Metadata Adapters for the *Hello World" Tutorial* to show how to use AMF with the Lightstreamer Flex Client Library ([docs](http://www.lightstreamer.com/docs/client_flashflexas_asdoc/index.html)).
+This project shows the Data Adapter and Metadata Adapters for the *Hello World" Tutorial* to show how to use AMF with the Lightstreamer Flex Client Library ([docs](https://lightstreamer.com/api/ls-flex-client/latest/index.html)).
 
 As an example of a client using this adapter, you may refer to the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-client-flex).
 
@@ -30,7 +30,7 @@ In the sections below, it will be used a single field containing an AMF object d
 
 ### AMF Lightstreamer Tutorial
 
-This project focuses on a simple "Hello World" example to show how to use AMF with our new Flex client library ([docs](http://www.lightstreamer.com/docs/client_flashflexas_asdoc/index.html)). We will create a JavaBean on the server-side and then use it on the client-side.
+This project focuses on a simple "Hello World" example to show how to use AMF with our new Flex client library ([docs](https://lightstreamer.com/api/ls-flex-client/latest/index.html)). We will create a JavaBean on the server-side and then use it on the client-side.
 
 For this tutorial, I'm assuming you have already read the ["Hello World" Tutorial - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-adapter-java) and ["Hello World" Tutorial - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-client-javascript) basic examples, or that you are already familiar with Lightstreamer concepts.
 
