@@ -60,10 +60,10 @@ public static byte[] toAMF(Object bean) {
   return baos.toByteArray();
 }
 ```
-The conversion from Java beans to an AMF-compatible byte array is performed by a couple of the [BlazeDS libraries](http://sourceforge.net/adobe/blazeds/wiki/Home/). 
+The conversion from Java beans to an AMF-compatible byte array is performed by a couple of the [BlazeDS libraries](https://sourceforge.net/adobe/blazeds/wiki/Home/). 
 The <i>toAMF</i> method receives an Object instance and converts it into an AMF byte array using the <i>Amf3Output</i> class. You can find a list of the conversions performed to switch from Java to AMF in the [ActionMessageOutput class javadoc](http://livedocs.adobe.com/blazeds/1/javadoc/flex/messaging/io/amf/ActionMessageOutput.html#writeObject(java.lang.Object).<br>
 
-In this case, we're going to use a Java bean. Note that the <i>AMF3Output class</i> javadoc is currently not linked/listed on [BlazeDS classes list](http://livedocs.adobe.com/blazeds/1/javadoc/overview-tree.html) (they forgot?). You can reach it anyway, at the [logical directory](http://livedocs.adobe.com/blazeds/1/javadoc/flex/messaging/io/amf/Amf3Output.html).
+In this case, we're going to use a Java bean. Note that the <i>AMF3Output class</i> javadoc is currently not linked/listed on [BlazeDS classes list](https://livedocs.adobe.com/blazeds/1/javadoc/overview-tree.html) (they forgot?). You can reach it anyway, at the [logical directory](http://livedocs.adobe.com/blazeds/1/javadoc/flex/messaging/io/amf/Amf3Output.html).
 
 Once the conversion method is in place, we can add the bean we want to send to the clients. We will prepare a simple bean containing only two properties, a String and a Date:
 
@@ -152,27 +152,28 @@ Please refer [here](https://lightstreamer.com/docs/ls-server/latest/General%20Co
 You've seen how to push Objects instead of Strings from a Lightstreamer server to a Flex client. You can exploit this technique to push complex data structures, but obviously, in doing so, you'll lose some of the optimizations offered by Lightstreamer protocol. For example, the merging algorithm (of the MERGE mode) is applied to the entire bean, instead of being applied to each single field, so that every time a property within the bean changes, the entire bean is pushed to the client, not only the changed value. As with anything regarding engineering, you'll have to choose the trade-off that optimizes properly for your application.
 
 ## Install
+
 If you want to install a version of this demo in your local Lightstreamer Server, follow these steps:
-* Download *Lightstreamer Server* (Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
+* Download *Lightstreamer Server* (Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](https://lightstreamer.com/download/), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java/releases), unzip it, and copy the just unzipped `AMFHelloWorld` folder into the `adapters` folder of your Lightstreamer Server installation.
-* Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`), and copy them into the `adapters/AMFHelloWOrld/lib` folder.
 * Launch Lightstreamer Server.
 * Launch a client like the ["Hello World" Tutorial - Flex (AMF) Client](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-client-flex).
 
 ## Build
-To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java#install) section above, follow these steps:
 
-* Download this project.
-* Get the `ls-adapter-interface.jar` file from the [Lightstreamer distribution](http://www.lightstreamer.com/download) and copy it into the `lib` folder.
-* Get the `log4j-1.2.17.jar` file from [Apache log4j](https://logging.apache.org/log4j/1.2/) and copy it into the `lib` folder.
-* Download [BlazeDS](http://sourceforge.net/adobe/blazeds/wiki/Home/) binary distribution, extract `flex-messaging-common.jar` and `flex-messaging-core.jar` from it (the downloaded zip contains a .war file, open it with an archive manager and locate the needed libraries under `WEB-INF/lib/`), and copy them into the `lib` folder.
-* Build the java source files in the `src` folder into a `LS_AMF_Hello_World_Adapter.jar` file. Here is an example for that:
+To build your own version of `example-amfhelloworld-adapter-java-0.0.1-SNAPSHOT.jar`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java#install) section above, you have two options:
+either use [Maven](https://maven.apache.org/) (or other build tools) to take care of dependencies and building (recommended) or gather the necessary jars yourself and build it manually.
+
+For the sake of simplicity only the Maven case is detailed here.
+
+### Maven
+
+You can easily build and run this application using Maven through the pom.xml file located in the root folder of this project. As an alternative, you can use an alternative build tool (e.g. Gradle, Ivy, etc.) by converting the provided pom.xml file.
+
+Assuming Maven is installed and available in your path you can build the demo by running
+```sh 
+ mvn install dependency:copy-dependencies 
 ```
- > mkdir tmp_classes
- > javac -source 1.7 -target 1.7 -nowarn -g -classpath lib/flex-messaging-common.jar;lib/flex-messaging-core.jar;lib/ls-adapter-interface.jar;lib/log4j-1.2.17.jar -sourcepath src/ -d tmp_classes src/AMFHelloWorld.java
- > jar cvf LS_AMF_Hello_World_Adapter.jar -C tmp_classes .
-```
-* copy the just compiled `LS_AMF_Hello_World_Adapter.jar` in the `adapters/AMFHelloWorld/lib` folder of your Lightstreamer Server installation.
 
 ## See Also
 
@@ -193,7 +194,8 @@ To build your own version of `LS_AMF_Hello_World_Adapter.jar`, instead of using 
 ## Lightstreamer Compatibility Notes 
 
 - Compatible with Lightstreamer Flex Client Library version 2.0 or newer.
-- Compatible with Lightstreamer SDK for Java In-Process Adapters since 6.0
+- Compatible with Lightstreamer SDK for Java In-Process Adapters since 7.3.
+- For a version of this example compatible with Lightstreamer SDK for Java Adapters version 6.0, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java/tree/pre_mvn).
 - For a version of this example compatible with Lightstreamer SDK for Java Adapters version 5.1, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-adapter-java/tree/for_Lightstreamer_5.1).
 <br>
 - Ensure that Flex Client API is supported by Lightstreamer Server license configuration.
