@@ -124,7 +124,7 @@ As you can see, there's nothing extremely complicated here, we just convert the 
 
 Please find the complete Java Adapter source in the "AMFHelloWorld.java" source file of this project.
 
-In the `adapters.xml` configuration file, we use "AMFHELLOWORLD" as the adapter set name, as expected by the [Lightstreamer - "Hello World Tutorial - Flex (AMF) Client"](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-client-flex), while we use the classic [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-example-ReusableMetadata-adapter-java), already provided by Lightstreamer server, as our Metadata Adapter and our AMFHelloWorld class as our Data Adapter.<br>
+In the `adapters.xml` configuration file, we use "AMFHELLOWORLD" as the adapter set name, as expected by the [Lightstreamer - "Hello World Tutorial - Flex (AMF) Client"](https://github.com/Lightstreamer/Lightstreamer-example-AMFHelloWorld-client-flex), while we use the classic [LiteralBasedProvider](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter), already provided by Lightstreamer server, as our Metadata Adapter and our AMFHelloWorld class as our Data Adapter.<br>
 The `adapters.xml` file under the `LS_HOME/adapters/AMFHelloWorld` folder looks like:
 ```xml
 <?xml version="1.0"?>
@@ -189,7 +189,7 @@ Assuming Maven is installed and available in your path you can build the demo by
 * [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-client-javascript)
 * [Lightstreamer - "Hello World" Tutorial - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-adapter-java)
 * [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-adapter-dotnet)
-* [Lightstreamer - Reusable Metadata Adapters - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-ReusableMetadata-adapter-java)
+* [LiteralBasedProvider Metadata Adapter](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#literalbasedprovider-metadata-adapter)
 
 ## Lightstreamer Compatibility Notes 
 
